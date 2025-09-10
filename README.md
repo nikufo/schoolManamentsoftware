@@ -100,7 +100,7 @@ npm run build
 
 ## 🙏 Acknowledgments
 
-- Built by [Nikson](facebook.com/nikson2.0)
+- Built by [Nikson](https://www.facebook.com/Nikson2.0)
 - Powered by React and Vite
 - Styled with Tailwind CSS
 
