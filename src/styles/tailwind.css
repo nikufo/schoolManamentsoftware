@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Colors */
+    --color-background: #FAFBFC; /* gray-50 */
+    --color-foreground: #1E293B; /* slate-800 */
+    --color-border: #E2E8F0; /* slate-200 */
+    --color-input: #FFFFFF; /* white */
+    --color-ring: #2563EB; /* blue-600 */
+    
+    /* Card Colors */
+    --color-card: #FFFFFF; /* white */
+    --color-card-foreground: #1E293B; /* slate-800 */
+    
+    /* Popover Colors */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #1E293B; /* slate-800 */
+    
+    /* Muted Colors */
+    --color-muted: #F1F5F9; /* slate-100 */
+    --color-muted-foreground: #64748B; /* slate-500 */
+    
+    /* Primary Colors */
+    --color-primary: #2563EB; /* blue-600 */
+    --color-primary-foreground: #FFFFFF; /* white */
+    
+    /* Secondary Colors */
+    --color-secondary: #64748B; /* slate-500 */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    
+    /* Accent Colors */
+    --color-accent: #F59E0B; /* amber-500 */
+    --color-accent-foreground: #1E293B; /* slate-800 */
+    
+    /* Success Colors */
+    --color-success: #059669; /* emerald-600 */
+    --color-success-foreground: #FFFFFF; /* white */
+    
+    /* Warning Colors */
+    --color-warning: #D97706; /* amber-600 */
+    --color-warning-foreground: #FFFFFF; /* white */
+    
+    /* Error/Destructive Colors */
+    --color-error: #DC2626; /* red-600 */
+    --color-error-foreground: #FFFFFF; /* white */
+    --color-destructive: #DC2626; /* red-600 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* Surface Color */
+    --color-surface: #FFFFFF; /* white */
+    
+    /* Text Colors */
+    --color-text-primary: #1E293B; /* slate-800 */
+    --color-text-secondary: #64748B; /* slate-500 */
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* Educational Trust Palette Utilities */
+  .text-educational-primary {
+    color: var(--color-primary);
+  }
+  
+  .bg-educational-primary {
+    background-color: var(--color-primary);
+  }
+  
+  .border-educational-primary {
+    border-color: var(--color-primary);
+  }
+  
+  /* Micro-interactions */
+  .hover-lift {
+    @apply transition-transform duration-200 ease-in-out;
+  }
+  
+  .hover-lift:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Skeleton shimmer effect */
+  .skeleton {
+    @apply animate-pulse bg-muted;
+  }
+  
+  .skeleton-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: shimmer 1.5s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  
+  /* Navigation transitions */
+  .nav-transition {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  /* Status indicators */
+  .status-indicator {
+    @apply inline-flex items-center justify-center w-2 h-2 rounded-full;
+  }
+  
+  /* Professional shadows */
+  .shadow-card {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .shadow-modal {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+}
+
+@layer utilities {
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .hover-lift:hover {
+      transform: none;
+    }
+    
+    .nav-transition {
+      transition: none;
+    }
+    
+    .skeleton-shimmer {
+      animation: none;
+    }
+  }
+}
